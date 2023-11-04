@@ -1,0 +1,14 @@
+version: "3.1"
+services: 
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+    user: "0:0"
+    container_name: dw_final
+    ports:
+      - 1435:1433 # Puerto expuesto 1435
+    environment:
+      ACCEPT_EULA : Y
+      SA_PASSWORD: Ing3nI3ri@23
+      SSQL_PID: Express
+    volumes:
+      - ~/docker/sqlserver-data:/var/opt/mssql
